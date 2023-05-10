@@ -1,4 +1,3 @@
-// import { hashPassword } from "@/lib/auth";
 import { hashPassword } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { TASK_STATUS } from "@prisma/client";
@@ -13,6 +12,7 @@ const getRandomTaskStatus = () => {
 };
 
 async function main() {
+  
   const user = await db.user.upsert({
     where: { email: "user@email.com" },
     update: {},
